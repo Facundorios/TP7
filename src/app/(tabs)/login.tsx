@@ -1,7 +1,8 @@
-import { ThemedText } from "@/components/ThemedText";
-import { NativeBaseProvider, Stack, FormControl, Input, Button } from "native-base";
-import { useState } from "react";
 
+import { ThemedText } from "@/src/components/ThemedText";
+import { NativeBaseProvider } from "native-base";
+import {  Stack, FormControl, Input, Button } from "native-base";
+import { useState } from "react";
 export default function App() {
   return (
     <NativeBaseProvider>

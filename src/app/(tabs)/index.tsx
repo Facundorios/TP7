@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "native-base";
-import { ThemedText } from "@/components/ThemedText";
+import { ThemedText } from "@/src/components/ThemedText";
 
 export default function App() {
   return (
