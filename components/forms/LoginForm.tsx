@@ -31,7 +31,7 @@ export const LoginForm = () => {
       alert("Usuario o contraseña incorrectos");
       return;
     }
-    router.replace(`/todo-list`);
+    router.replace(`task-list`);
   };
 
   const handleForm = (key: string, value: string) => {
