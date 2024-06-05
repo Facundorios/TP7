@@ -5,6 +5,7 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { LoginForm } from "@/components/forms/LoginForm";
+import { TaskProvider } from "@/context/TaskContext";
 
 export default function HomeScreen() {
   return (
@@ -50,5 +51,9 @@ export const styles = StyleSheet.create({
   button: {
     marginTop: 20,
     marginBottom: 20,
-  }
+  },
+  card: {
+    marginTop: 20,
+    marginBottom: 20,
+  },
 });
