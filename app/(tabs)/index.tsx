@@ -45,8 +45,8 @@ export const styles = StyleSheet.create({
     marginBottom: 8,
   },
   logo: {
-    marginTop: 20,
     position: "absolute",
+    marginTop: 20
   },
   button: {
     marginTop: 20,

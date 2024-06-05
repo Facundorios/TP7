@@ -1,0 +1,34 @@
+{
+    "tasks": [
+      {
+        "title": "Comprar comestibles",
+        "description": "Ir al supermercado y comprar frutas, verduras, carne y pan",
+        "author": "Juan",
+        "date": "2022-03-01"
+      },
+      {
+        "title": "Lavar la ropa",
+        "description": "Lavar la ropa de la semana, incluyendo sábanas y toallas",
+        "author": "Ana",
+        "date": "2022-03-02"
+      },
+      {
+        "title": "Hacer ejercicio",
+        "description": "Ir al gimnasio para una sesión de entrenamiento de una hora",
+        "author": "Pedro",
+        "date": "2022-03-03"
+      },
+      {
+        "title": "Cocinar la cena",
+        "description": "Preparar una cena saludable para la familia",
+        "author": "Maria",
+        "date": "2022-03-04"
+      },
+      {
+        "title": "Limpiar la casa",
+        "description": "Limpiar la sala, la cocina, los baños y las habitaciones",
+        "author": "Carlos",
+        "date": "2022-03-05"
+      }
+    ]
+  }

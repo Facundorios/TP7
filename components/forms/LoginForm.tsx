@@ -35,7 +35,6 @@ export const LoginForm = () => {
   };
 
   const handleForm = (key: string, value: string) => {
-    console.log(key, value);
     setLogin((prevLogin) => ({ ...prevLogin, [key]: value }));
   };
 
