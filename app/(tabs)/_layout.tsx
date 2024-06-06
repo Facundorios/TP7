@@ -8,7 +8,7 @@ export default function TabLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="register" options={{ headerShown: false }} />
-      <Stack.Screen name="[id]/task" options={{ headerShown: false }} />
+      <Stack.Screen name="task" options={{ headerShown: false,  }} />
     </Stack>
   );
 }

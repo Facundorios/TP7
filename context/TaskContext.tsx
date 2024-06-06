@@ -62,6 +62,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     const tarea = tareas[index];
     router.replace(`task/${index}`);
   };
+  
   return (
     <TaskContext.Provider
       value={{
