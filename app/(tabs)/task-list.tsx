@@ -20,10 +20,11 @@ export default function TodoListScreen() {
         />
       }
     >
-      {" "}
-      <Button onPress={() => {}}>Atras</Button>
+      <Button onPress={() => {
+        router.replace(`config`);
+      }}>Configuración</Button>
+      <ThemedText>Lista de tareas:</ThemedText>
       <ThemedView>
-        <ThemedText>Lista de tareas:</ThemedText>
         <Button
           icon="add"
           style={styles.button}
@@ -33,7 +34,7 @@ export default function TodoListScreen() {
         >
           Añadir to do
         </Button>
-        {tareas.length === 0 && <ThemedText>No hay tareas</ThemedText>}
+
         {tareas && (
           <FlatList
             data={tasks}
@@ -42,16 +43,18 @@ export default function TodoListScreen() {
                 <Card>
                   <Card.Content>
                     <ThemedText type="title">{item.title}</ThemedText>
+                    <ThemedText type="subtitle">{item.description}</ThemedText>
+                    <ThemedText type="default">{item.author}</ThemedText>
+                    <ThemedText type="defaultSemiBold">{item.date}</ThemedText>
+
                     <Card.Actions>
                       <Button
                         onPress={() => {
                           handleDetailsTask(index);
                         }}
                       >
-                        Ver
+                        Editar
                       </Button>
-                      <Button onPress={() => {}}>Editar</Button>
-                      <Button onPress={() => {}}>Eliminar</Button>
                     </Card.Actions>
                   </Card.Content>
                 </Card>

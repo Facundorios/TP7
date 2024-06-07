@@ -11,27 +11,24 @@ export const LoginForm = () => {
     password: "",
   });
 
-  const user = {
-    username: "admin123",
-    password: "admin321",
-  };
 
   const handleLogin = () => {
+
+    if (login.username === "" || login.password === "") {
+      alert("Todos los campos son obligatorios");
+      return;
+    }
     if (login.username.length < 5) {
       alert("El usuario debe tener al menos 5 caracteres");
       return;
     }
 
-    if (login.password.length < 5 && login.password.length > 10) {
+    if (login.password.length < 5 || login.password.length > 10) {
       alert("La contraseña debe tener entre 5 y 10 caracteres");
       return;
     }
 
-    if (login.username !== user.username || login.password !== user.password) {
-      alert("Usuario o contraseña incorrectos");
-      return;
-    }
-    router.replace(`task-list`);
+    router.replace("/welcome");
   };
 
   const handleForm = (key: string, value: string) => {
