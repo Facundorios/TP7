@@ -16,7 +16,7 @@ export default function SeeTaskScreen() {
   return (
     <ThemedView>
       <Card style={styles.card}>
-        <ThemedText type="title">Tarea Numero {index}</ThemedText>
+        <ThemedText type="title">Tarea Numero {indexNumber + 1}</ThemedText>
         <ThemedText type="subtitle">{tasks[indexNumber].title}</ThemedText>
         <ThemedText type="default">{tasks[indexNumber].description}</ThemedText>
         <ThemedText type="defaultSemiBold">
@@ -25,9 +25,12 @@ export default function SeeTaskScreen() {
         <ThemedText type="defaultSemiBold">
           {tasks[indexNumber].date}
         </ThemedText>
-        <Button onPress={() => {
-          router.push("/task-list");
-        }}>
+        <Button
+          onPress={() => {
+            router.push("/task-list");
+          }}
+          style={styles.button}
+        >
           Volver
         </Button>
       </Card>
@@ -38,9 +41,16 @@ export default function SeeTaskScreen() {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: "grey",
-    marginTop: 20,
-    marginBottom: 20,
+    height: "100%",
     marginLeft: 200,
     marginRight: 200,
+    borderRadius: 0,
+  },
+  button: {
+    backgroundColor: "#f3f3f3",
+    marginTop: 20,
+    marginBottom: 20,
+    borderRadius: 0,
+
   },
 });

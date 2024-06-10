@@ -13,6 +13,7 @@ export default function TabLayout() {
       <Stack.Screen name="task" options={{ headerShown: false }} />
       <Stack.Screen name="config" options={{ headerShown: false }} />
       <Stack.Screen name="task-form" options={{ headerShown: false }} />
+      <Stack.Screen name="task-list" options={{ headerShown: false }} />
       <Stack.Screen name="welcome" options={{ headerShown: false }} />
     </Stack>
   );

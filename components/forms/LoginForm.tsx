@@ -21,8 +21,18 @@ export const LoginForm = () => {
       return;
     }
 
-    if (login.password.length < 5 || login.password.length > 10) {
-      alert("La contraseña debe tener entre 5 y 10 caracteres");
+    if (login.username.length > 10) {
+      alert("El usuario debe tener menos de 10 caracteres");
+      return;
+    }
+
+    if (login.password.length < 5) {
+      alert("La contraseña debe tener al menos 5 caracteres");
+      return;
+    }
+
+    if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])/.test(login.password)) {
+      alert("La contraseña debe tener al menos una letra mayúscula, una minúscula, un número y un caracter especial");
       return;
     }
 
@@ -48,9 +58,9 @@ export const LoginForm = () => {
       <ThemedText>Password</ThemedText>
 
       <TextInput
+        secureTextEntry
         label="Password"
         value={login.password}
-        right={<TextInput.Icon icon="eye" />}
         onChangeText={(value) => handleForm("password", value)}
       />
       <Button onPress={handleLogin}>Login</Button>

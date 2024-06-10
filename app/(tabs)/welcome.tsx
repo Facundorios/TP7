@@ -22,14 +22,14 @@ export default function WelcomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  button: {
-    marginTop: 20,
-    marginBottom: 20,
-  },
   card: {
+
+    width: "100%",
+    height: "100%"
+  },
+  button:{
+    backgroundColor: "grey",
     marginTop: 20,
     marginBottom: 20,
-    marginLeft: 200,
-    marginRight: 200,
-  },
+  }
 });

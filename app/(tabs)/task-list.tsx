@@ -29,15 +29,7 @@ export default function TodoListScreen() {
       </Button>
       <ThemedText>Lista de tareas:</ThemedText>
       <ThemedView>
-        <Button
-          icon="add"
-          style={styles.button}
-          onPress={() => {
-            router.replace(`task-form`);
-          }}
-        >
-          Añadir to do
-        </Button>
+       
 
         {tareas && (
           <FlatList
@@ -76,6 +68,17 @@ export default function TodoListScreen() {
           />
         )}
       </ThemedView>
+
+      <Button
+          icon="archive-plus-outline"
+          style={styles.button}
+          onPress={() => {
+            router.replace(`task-form`);
+          }}
+        >
+          Añadir Nueva Tarea
+        </Button>
+
     </ParallaxScrollView>
   );
 }
