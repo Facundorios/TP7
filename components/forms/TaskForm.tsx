@@ -8,12 +8,9 @@ import { Button, TextInput } from "react-native-paper";
 import { useContext } from "react";
 
 export const TaskForm = () => {
-
   const { task, handleTask, handleTaskCreation } = useContext(TaskContext);
 
-
-
-return (
+  return (
     <ThemedView style={styles.stepContainer}>
       <ThemedText type="title">Crear tarea</ThemedText>
 
@@ -31,12 +28,29 @@ return (
         label="Descripción"
         value={task.description}
         onChangeText={(value) => handleTask("description", value)}
-        />
+      />
 
-      <Button mode="contained" onPress={handleTaskCreation}>
+      <ThemedText>Autor</ThemedText>
+
+      <TextInput
+        label="Autor"
+        value={task.author}
+        onChangeText={(value) => handleTask("author", value)}
+      />
+
+      <ThemedText>Fecha</ThemedText>
+
+      <TextInput
+        label="Fecha"
+        value={task.date}
+        onChangeText={(value) => handleTask("date", value)}
+      />
+
+      <Button mode="contained" onPress={() => {
+        router.push("/task-list");
+      }}>
         Crear tarea
       </Button>
     </ThemedView>
   );
 };
-

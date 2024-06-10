@@ -19,7 +19,8 @@ export const TaskContext = createContext({
   handleTaskCreation: () => {},
   tareas: [] as unknown as TaskType[],
   handleDeteleTask: (index: number) => {},
-  handleDetailsTask: (index: number) => {},
+  handleEditTask: (index: number) => {},
+  handleSeeTask: (index: number) => {},
 });
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
@@ -58,11 +59,16 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     setTareas(newTareas);
   };
 
-  const handleDetailsTask = (index: number) => {
+  const handleEditTask = (index: number) => {
+    const tarea = tareas[index];
+    router.replace(`task/${index}/edit`);
+  };
+
+  const handleSeeTask = (index: number) => {
     const tarea = tareas[index];
     router.replace(`task/${index}`);
   };
-  
+
   return (
     <TaskContext.Provider
       value={{
@@ -71,7 +77,8 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
         handleTaskCreation,
         tareas,
         handleDeteleTask,
-        handleDetailsTask,
+        handleEditTask,
+        handleSeeTask,
       }}
     >
       {children}

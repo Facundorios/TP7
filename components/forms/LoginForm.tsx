@@ -11,9 +11,7 @@ export const LoginForm = () => {
     password: "",
   });
 
-
   const handleLogin = () => {
-
     if (login.username === "" || login.password === "") {
       alert("Todos los campos son obligatorios");
       return;

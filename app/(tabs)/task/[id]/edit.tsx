@@ -5,7 +5,7 @@ import { tasks } from "@/tasks.json";
 import { Card, TextInput, Button } from "react-native-paper";
 import { StyleSheet } from "react-native";
 
-export default function TaskScreen() {
+export default function EditTaskScreen() {
   const { id: index } = useLocalSearchParams();
 
   if (index == undefined || Array.isArray(index)) {

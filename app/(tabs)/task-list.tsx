@@ -9,7 +9,7 @@ import { FlatList, Image, StyleSheet } from "react-native";
 import { tasks } from "../../tasks.json";
 
 export default function TodoListScreen() {
-  const { tareas, handleDetailsTask } = useContext(TaskContext);
+  const { tareas, handleEditTask, handleSeeTask } = useContext(TaskContext);
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
@@ -20,9 +20,13 @@ export default function TodoListScreen() {
         />
       }
     >
-      <Button onPress={() => {
-        router.replace(`config`);
-      }}>Configuración</Button>
+      <Button
+        onPress={() => {
+          router.replace(`config`);
+        }}
+      >
+        Configuración
+      </Button>
       <ThemedText>Lista de tareas:</ThemedText>
       <ThemedView>
         <Button
@@ -40,7 +44,7 @@ export default function TodoListScreen() {
             data={tasks}
             renderItem={({ item, index }) => (
               <ThemedView>
-                <Card>
+                <Card style={styles.card}>
                   <Card.Content>
                     <ThemedText type="title">{item.title}</ThemedText>
                     <ThemedText type="subtitle">{item.description}</ThemedText>
@@ -50,11 +54,20 @@ export default function TodoListScreen() {
                     <Card.Actions>
                       <Button
                         onPress={() => {
-                          handleDetailsTask(index);
+                          handleEditTask(index);
                         }}
                       >
                         Editar
                       </Button>
+
+                      <Button
+                        onPress={() => {
+                          handleSeeTask(index);
+                        }}
+                      >
+                        Ver
+                      </Button>
+
                     </Card.Actions>
                   </Card.Content>
                 </Card>
@@ -86,6 +99,7 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
   card: {
+    backgroundColor: "grey",
     marginTop: 20,
     marginBottom: 20,
   },
